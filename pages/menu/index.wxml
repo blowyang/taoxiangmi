@@ -1,0 +1,37 @@
+<view class="container">
+  <!--左侧一级菜单-->
+  <view class="type-container">
+    <view class="type-box" wx:for-items="{{categories}}" wx:key="id">
+        <view id="{{item.id}}" class="type-navbar-item {{activeCategoryId == item.id ? 'type-item-on' : ''}}" bindtap="tabClick">
+            {{item.name}}
+        </view>
+    </view>
+  </view>
+  <!--右侧分类广告-->
+  <view class="type-list">
+    <view class="swiper-container">
+      <swiper class="swiper_box" 
+                  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+          <block wx:for="{{banners}}" wx:key="id">
+              <swiper-item>
+                  <image bindtap="tapBanner" data-id="{{item.businessId}}" src="{{item.picUrl}}_m" class="slide-image" width="290px" height="170px"/>
+              </swiper-item>
+          </block>
+      </swiper>
+      <view class="dots">  
+          <block wx:for="{{banners}}" wx:key="unique">  
+            <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>  
+          </block>  
+      </view> 
+    </view>
+    <!--右侧二级菜单-->
+    <view if="{{item.level == 2}}" class="type-menu">
+      <view class="type-level-box" wx:for-items="{{categorieslist}}" wx:key="id">
+        <view id="{{item.id}}" class="type-level-item " bindtap="levelClick" data-id="{{item.id}}">
+          <image class="type-img" src="{{item.icon}}" ></image>
+            {{item.name}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

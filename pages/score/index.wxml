@@ -1,0 +1,31 @@
+<view class="container">
+  <view class="score-title">
+    <image class="score-img" src="../../images/score_bg.png"></image>
+    <view class="score-title-name">您的可用积分</view>
+    <view class="score-title-score">{{score}}</view>
+  </view>
+  <view class="score-center"><!--<view wx:for="{{rules}}" wx:key="rules" class="score-text {{score_sign_continuous == item.score || score_sign_continuous > item.score ? 'active':''}}">-->
+    <view wx:for="{{rules}}" wx:key="rules" class="score-text {{ score_sign_continuous >= item.continuous ? 'active':'' }}">
+      <view class="score-number">+{{item.score}}</view>
+      <view class="score-red">{{score_sign_continuous >= item.continuous ? '✿':'❀'}}</view>
+      <view class="score-name">{{item.continuous}}天</view>
+    </view>
+    <view class="score-line"></view><!--
+    <view bindtap="{{score_sign_continuous == 0 ? 'scoresign':'error'}}" class="{{score_sign_continuous == 0 ? 'score-btn':'score-btn-none'}}">{{score_sign_continuous == 0 ? '签到':'已签到'}}</view>-->
+    <view bindtap="{{ci == 0 ? 'scoresign':'error'}}" class="{{ci == 0 ? 'score-btn':'score-btn-none'}}">{{ci == 0 ? '签到':'已签到'}}</view>
+  </view>
+  <view class="score-share">
+    <view class="share-list">
+      <image class="share-img" src="../../images/shopping.png"></image>
+      <view class="share-title">消费购物</view>
+      <view class="share-text">购物完成，确认收货后立返积分</view>
+      <view class="share-btn" bindtap="home">去购物</view>
+    </view>
+    <view class="share-list avict">
+      <image class="share-img" src="../../images/score.png"></image>
+      <view class="share-title">积分兑换</view>
+      <view class="share-text">积分兑好礼，20积分即可兑换礼券</view>
+      <view class="share-btn" bindtap="score">去兑换</view>
+    </view>
+  </view>
+</view>

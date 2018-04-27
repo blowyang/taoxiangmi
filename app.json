@@ -1,0 +1,65 @@
+{
+  "pages":[
+    "pages/start/start",
+    "pages/index/index",
+    "pages/menu/index",
+    "pages/score/index",
+    "pages/menu-list/index",
+    "pages/newcoupons/index",
+    "pages/goods-details/index",
+    "pages/fav-list/index",
+    "pages/topic-list/index",
+    "pages/topic/index",
+    "pages/shop-cart/index",
+    "pages/to-pay-order/index",
+    "pages/select-address/index",
+    "pages/address-add/index",
+    "pages/order-list/index",
+    "pages/order-details/index",
+    "pages/wuliu/index",
+    "pages/mycoupons/index",
+    "pages/my/index",
+    "pages/notice/show",
+    "pages/recharge/index",
+    "pages/withdraw/index",
+    "pages/kanjia/index",
+    "pages/my-kanjia/index",
+    "pages/kanjia-goods/index",
+    "pages/kanjia-list/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#838383",
+    "selectedColor": "#b4282d",
+    "borderStyle": "white",
+    "backgroundColor": "#fcfcfc",
+    "list": [{
+     "pagePath": "pages/index/index",
+      "iconPath": "images/nav/home-off.png",
+      "selectedIconPath": "images/nav/home-on.png",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/menu/index",
+      "iconPath": "images/nav/menu-off.png",
+      "selectedIconPath": "images/nav/menu-on.png",
+      "text": "分类"
+    },
+    {
+      "pagePath": "pages/shop-cart/index",
+      "iconPath": "images/nav/cart-off.png",
+      "selectedIconPath": "images/nav/cart-on.png",
+      "text": "购物车"
+    },
+    {
+      "pagePath": "pages/my/index",
+      "iconPath": "images/nav/my-off.png",
+      "selectedIconPath": "images/nav/my-on.png",
+      "text": "个人"
+    }]
+  }
+}

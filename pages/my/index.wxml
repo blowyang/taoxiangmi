@@ -1,0 +1,53 @@
+<view class="container">
+	<view class="userinfo">
+		<image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+		<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <text class="userinfo-score" bindtap="score">每日签到 ></text>
+	</view>
+  <view class="userinfo-item">
+    <image src="../../images/profile_dfunding.png"></image>
+    <navigator url="/pages/order-list/index" hover-class="none">我的订单</navigator>
+  </view>
+  <view class="user-cart-list">
+    <view class="cart-list" bindtap="goorderlist" data-index="0">
+      <view class="{{tabClass[0]}}"></view>
+      <image src="../../images/order-details/orderform_pay.png"></image>
+      待付款
+    </view>
+    <view class="cart-list" bindtap="goorderlist" data-index="1">
+      <view class="{{tabClass[1]}}"></view>
+      <image src="../../images/order-details/orderform_ship.png"></image>
+      待发货
+    </view>
+    <view class="cart-list" bindtap="goorderlist" data-index="2">
+      <view class="{{tabClass[2]}}"></view>
+      <image src="../../images/order-details/delivering.png"></image>
+      待收货
+    </view>
+    <view class="cart-list" bindtap="goorderlist" data-index="3">
+      <view class="{{tabClass[3]}}"></view>
+      <image src="../../images/order-details/orderform.png"></image>
+      待评价
+    </view>
+  </view>
+  <view class="userinfo-item">
+    <image src="../../images/profile_tegral.png"></image>
+    <navigator url="/pages/withdraw/index" hover-class="none">我的余额<text>（{{balance}}元）</text></navigator>
+  </view>
+  <view class="userinfo-item">
+    <image src="../../images/kanjia/kjico.png"></image>
+    <navigator url="/pages/my-kanjia/index" hover-class="none">我的砍价</navigator>
+  </view>
+  <view class="userinfo-item">
+    <image src="../../images/profile_ticket.png"></image>
+    <navigator url="/pages/mycoupons/index" hover-class="none">我的礼券</navigator>
+  </view>
+  <view class="userinfo-item">
+    <image src="../../images/profile_collection.png"></image>
+    <navigator url="/pages/fav-list/index" hover-class="none">我的收藏</navigator>
+  </view>
+  <view class="userinfo-item">
+    <image src="../../images/profile_address.png"></image>
+    <navigator url="/pages/select-address/index" hover-class="none">我的地址</navigator>
+  </view>
+</view>

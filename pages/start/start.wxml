@@ -1,0 +1,9 @@
+<!--start.wxml-->
+<view class="container" wx:for="{{sales}}" wx:key="id">
+  <image bindtap="tapBanner" data-id="{{item.businessId}}" class="bgImages" src="{{item.picUrl}}" />
+  <view class="gohome" bindtap="home">跳过广告 {{second}}</view>
+  <view class="logo">
+    <view class="title">{{item.title}}</view>
+    <view class="subtitle">{{item.remark}}</view>
+  </view>
+</view>

@@ -1,0 +1,88 @@
+<!--index.wxml-->
+<!--1px = 750/320 = 2.34rpx;-->
+<view class="container">
+  <!--/*  大图幻灯片  */-->
+  <view class="swiper-container">
+      <swiper class="swiper_box" 
+                  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+          <block wx:for="{{banners}}" wx:key="id">
+              <swiper-item>
+                  <image bindtap="tapBanner" data-id="{{item.businessId}}" src="{{item.picUrl}}_m" class="slide-image" width="750rpx" height="562.5rpx"/>
+              </swiper-item>
+          </block>
+      </swiper>
+      <view class="dots">  
+        <block wx:for="{{banners}}" wx:key="unique">  
+          <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>  
+        </block>  
+      </view> 
+  </view>
+  <!--/*  3个信息公示位  */-->
+  <view class="sale-banners">
+    <view class="sale-imge" wx:for="{{sales}}" wx:key="id" bindtap="tapSales" data-id="{{item.linkUrl}}">
+      {{item.title}}
+      <image src="{{item.picUrl}}_m"></image>
+    </view>
+  </view>
+  <!--/*  专题栏目名称  */-->
+  <view class="special-index"><text>—</text>专 题<text>—</text></view>
+  <!--/*  砍价专题名称  */-->
+  <view class="goods-special" wx:for="{{kanjia}}" wx:key="id">
+    <image class="special-image" bindtap="getkanjialist" src="{{item.picUrl}}"></image>
+    <view class="special-goods">
+      <view class="special-after"></view>
+      <view class="special-goods-list" wx:for-items="{{kjgoods}}" wx:key="{{index}}" bindtap="kanjiaTap" data-id="{{item.id}}">
+        <image src="{{item.pic}}_m" class="image" mode="aspectFill" lazy-load="true"/>
+        <view class="goods-title">{{item.name}}</view>
+        <view class="good-money"><text>最低价：</text>Ұ{{item.minPrice}}</view>
+      </view>
+    </view>
+  </view>
+  <!--/*  推荐专题  */-->
+  <view class="goods-special" wx:for="{{specials}}" wx:key="id">
+    <view bindtap="toTopic" data-id="{{item.linkUrl}}">
+      <image class="special-image" src="{{item.picUrl}}"></image>
+      <view class="special-bg"></view>
+      <view class="special-title">
+        <view class="special-name">{{item.title}}</view>
+        <view class="special-text">{{item.remark}}</view>
+      </view>
+    </view>
+    <view class="special-goods">
+      <view class="special-after"></view>
+      <view class="special-goods-list" wx:for-items="{{goods}}" wx:key="{{index}}" bindtap="toDetailsTap" data-id="{{item.id}}">
+        <image src="{{item.pic}}_m" class="image" mode="aspectFill" lazy-load="true"/>
+        <view class="goods-title">{{item.name}}</view>
+        <view class="good-money">Ұ{{item.minPrice}}</view>
+      </view>
+    </view>
+  </view>
+  <!--/*  类目专题  */-->
+  <view class="goods-special" wx:for="{{categorys}}" wx:key="id">
+    <view bindtap="toTopic" data-id="{{item.linkUrl}}">
+      <image class="special-image" src="{{item.picUrl}}"></image>
+      <view class="special-bg"></view>
+      <view class="special-title">
+        <view class="special-name">{{item.title}}</view>
+        <view class="special-text">{{item.remark}}</view>
+      </view>
+    </view>
+    <view class="special-goods">
+      <view class="special-after"></view>
+      <view class="special-goods-list" wx:for-items="{{ccgoods[item.businessId]}}" wx:key="{{index}}" bindtap="toDetailsTap" data-id="{{item.id}}">
+        <image src="{{item.pic}}_m" class="image" mode="aspectFill" lazy-load="true"/>
+        <view class="goods-title">{{item.name}}</view>
+        <view class="good-money">Ұ{{item.minPrice}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!--/*  优惠券弹出窗口  */-->
+<view class="modal-box" wx:for="{{newcoupons}}" wx:key="id" hidden="{{flag}}" bindtap="hide">
+  <view class="modal-body">
+    <view class="modal-content">
+      <image src="{{item.picUrl}}" class="fenxiang" bindtap="newCoupon" data-id="{{item.businessId}}"></image>
+      <image src="../../images/close.png" class="knowBtnImg" bindtap="hide"></image>
+    </view>
+  </view>
+</view>

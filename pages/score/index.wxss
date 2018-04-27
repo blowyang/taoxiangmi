@@ -1,0 +1,137 @@
+page{
+  background-color: #ffffff;
+}
+.container{
+  width: 100%;
+  display: block;
+}
+.score-title{
+  position: relative;
+  text-align: center;
+}
+.score-img,.score-title{
+  width: 100%;
+  height: 150px;
+}
+.score-title-name,.score-title-score{
+  position:absolute;
+  width:100%;
+  top:30px;
+  font-size:32rpx;
+  color:#666;
+}
+.score-title-score{
+  top: 65px;
+  color: #b4a078;
+  font-size: 66rpx;
+  font-weight: bold;
+}
+.score-center{
+  text-align:center;
+  padding-top:30px;
+  position:relative;
+  background-color:#ffffff;
+  padding-bottom:25px;
+}
+.score-text{
+  display:inline-block;
+  font-size:26rpx;
+  padding:13px;
+  color: #333;
+}
+.score-red{
+  font-size:26rpx;
+  margin:-37px 0 0 6px;
+  position:absolute;
+  z-index:9999;
+}
+.active{
+  color: #ab2b2b;
+}
+.score-number{
+  padding-bottom:50px;
+}
+.line-btn{
+  width:14px;
+  height:14px;
+  padding-bottom: 10px;
+}
+.score-line{
+  width:90%;
+  height:1px;
+  border-top:1px dashed #999;
+  position:absolute;
+  top:86px;
+  left:5%;
+  z-index:99;
+}
+.score-btn{
+  color:#fff;
+  background-color:#b4a078;
+  width:200px;
+  height:40px;
+  border-radius:20px;
+  line-height:40px;
+  font-size:36rpx;
+  margin-left:26%;
+  margin-top:30px;
+}
+.score-btn-none{
+  color:#fff;
+  background-color:#aeaeae;
+  width:200px;
+  height:40px;
+  border-radius:20px;
+  line-height:40px;
+  font-size:36rpx;
+  margin-left:26%;
+  margin-top:25px;
+}
+.score-share{
+  padding:15px;
+}
+.share-list{
+  background-color:#f4ebe2;
+  border-radius:5px;
+  padding:15px 10px;
+  height: 55px;
+  margin-bottom: 15px;
+}
+.share-img{
+  width:60px;
+  height:60px;
+  float:left;
+  margin:12px 0px;
+  padding-right:15px;
+}
+.share-title{
+  color:#e1b68c;
+  font-size:28rpx;
+  margin-top:5px;
+}
+.share-text{
+  color:#e1b68c;
+  font-size:24rpx;
+  margin-top:5px;
+}
+.share-btn{
+  float:right;
+  background-color:#e1b68c;
+  color:#ffffff;
+  font-size:26rpx;
+  padding:3px 5px;
+  border-radius:3px;
+  margin:-30px 5px;
+}
+.avict{
+  background-color:#ede6d6;
+}
+.avict image{
+  margin:20px 0;
+}
+.avict .share-title,.avict .share-text{
+  color:#b3a078;
+}
+.avict .share-btn{
+  background-color:#b3a078;
+}
